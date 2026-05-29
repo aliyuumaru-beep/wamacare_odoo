@@ -13,7 +13,7 @@
 | 10 | No offsite backup configured (cloud sync) | Phase 11 | LOW | OPEN |
 | 11 | Admin password still `admin/admin` — must be changed before non-local use | Manual | HIGH | OPEN |
 | 15 | Absolute paths in scripts/conf (`/Users/mac/...`) — not portable to other machines | Phase 12 | MEDIUM | OPEN |
-| 17 | `testing/PHASE_10_VALIDATION_REPORT.md` not yet created | Phase 10 | MEDIUM | OPEN |
+| 17 | `testing/PHASE_10_VALIDATION_REPORT.md` not yet created | Phase 10 | MEDIUM | RESOLVED 2026-05-29 |
 | 18 | `RESTORE_DRILL.md` not yet created | Phase 11 | MEDIUM | OPEN |
 | 26 | Nigeria chart template not applied via UI — taxes available but fiscal COA links pending | Manual | MEDIUM | OPEN |
 | 27 | Department managers not yet assigned in Odoo UI | Manual | LOW | OPEN |

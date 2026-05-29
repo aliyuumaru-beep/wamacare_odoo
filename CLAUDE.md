@@ -48,7 +48,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 
 ## ACTIVE PHASE
 
-**Current phase:** Phase 8 COMPLETE. Fully functional NGO/CBO instance. Phase 10 (validation) next.
+**Current phase:** Phase 10 COMPLETE — 20/20 validation checks PASS. Phase 11 (restore drill) next.
 
 **Completed phases:**
 - [x] Phase -1 — Repository and project boundary setup
@@ -59,7 +59,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 - [x] Phase 4 — Odoo environment setup (wamacare.conf, port 8070)
 - [x] Phase 5 — Database created (fresh Community — see DECISION_LOG DEC-007)
 
-**Next phase:** Phase 10 — Testing and validation (PHASE_10_VALIDATION_REPORT.md)
+**Next phase:** Phase 11 — Backup and restore drill (RESTORE_DRILL.md)
 
 **Database status:** `wamacare_local` — LIVE with data.
 - 65 modules installed (+ l10n_ng + base_vat for Nigeria VAT/WHT)
@@ -270,6 +270,6 @@ Report the uncertainty clearly and wait for operator instruction.
 | 7 | Data import | 2026-05-29 | COMPLETE |
 | 8 | Functional configuration | 2026-05-29 | COMPLETE |
 | 9 | Roadmap and template governance | 2026-05-29 | COMPLETE (docs exist) |
-| 10 | Testing and validation | — | PENDING |
+| 10 | Testing and validation | 2026-05-29 | COMPLETE — 20/20 PASS |
 | 11 | Backup and restore drill | — | PENDING |
 | 12 | Final documentation, GitHub push, handover | — | PENDING |
