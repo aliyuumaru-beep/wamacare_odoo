@@ -11,10 +11,11 @@ import sys
 import os
 
 # ─── Connection ───────────────────────────────────────────────────────────────
-URL = "http://localhost:8070"
-DB = "wamacare_local"
+# Override via environment: WAMACARE_URL, WAMACARE_DB, WAMACARE_ADMIN_PASS
+URL = os.environ.get("WAMACARE_URL", "http://localhost:8070")
+DB = os.environ.get("WAMACARE_DB", "wamacare_local")
 USER = "admin"
-PASSWORD = "admin"
+PASSWORD = os.environ.get("WAMACARE_ADMIN_PASS", "admin")  # default only; override in prod
 
 CSV_DIR = os.path.join(os.path.dirname(__file__), "..", "csv_templates", "wamacare")
 

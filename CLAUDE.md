@@ -31,7 +31,7 @@ Do not install or configure healthcare-specific clinical modules unless proven n
 
 ---
 
-## START COMMAND (once database is ready)
+## START COMMAND
 
 ```bash
 source /Users/mac/odoo17/odoo/venv/bin/activate
@@ -48,7 +48,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 
 ## ACTIVE PHASE
 
-**Current phase:** Phase 5 COMPLETE. Fresh Community database running on port 8070.
+**Current phase:** Phase 7 COMPLETE. Database live with data. Phase 8 next.
 
 **Completed phases:**
 - [x] Phase -1 — Repository and project boundary setup
