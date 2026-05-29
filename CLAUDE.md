@@ -48,7 +48,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 
 ## ACTIVE PHASE
 
-**Current phase:** Phase 7 COMPLETE. Database live with data. Phase 8 next.
+**Current phase:** Phase 8 COMPLETE. Fully functional NGO/CBO instance. Phase 10 (validation) next.
 
 **Completed phases:**
 - [x] Phase -1 — Repository and project boundary setup
@@ -59,19 +59,24 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 - [x] Phase 4 — Odoo environment setup (wamacare.conf, port 8070)
 - [x] Phase 5 — Database created (fresh Community — see DECISION_LOG DEC-007)
 
-**Next phase:** Phase 8 — Functional configuration (chart of accounts, NGN currency, user roles, approval workflows)
+**Next phase:** Phase 10 — Testing and validation (PHASE_10_VALIDATION_REPORT.md)
 
 **Database status:** `wamacare_local` — LIVE with data.
-- 63 Community modules installed
-- 13 analytic accounts (Maternal Health, Safeguarding, Capacity Building, etc.)
-- 5 HR departments (ICT, Finance, Programs, Legal & Compliance, Field Operations)
+- 65 modules installed (+ l10n_ng + base_vat for Nigeria VAT/WHT)
+- Currency: NGN (₦)
+- Company: WamaCare (Tiko CBO), Abuja FCT, Nigeria
+- 13 analytic accounts linked to 5 projects
+- 68 chart of accounts (47 generic + 21 NGO/Nigeria-specific)
+- 5 HR departments, 4 employees
 - 5 projects/programmes
 - 13 beneficiaries (BEN-004 to BEN-016, Abuja FCT)
-- 17 vendors
-- 4 employees
+- 17 vendors, 1 LPO (₦2.5M)
+- 3 assets: Ambulance, Ultrasound, Laptop
 - 15 products/services
-- Company: WamaCare (Tiko CBO), Country: Nigeria
-- URL: http://localhost:8070 | Login: admin / admin
+- 5 users: admin, aliyu.umaru, finance.officer, field.officer, hr.officer
+- Purchase approval: enabled, threshold ₦200,000
+- Analytic accounting: ENABLED
+- URL: http://localhost:8070 | admin/admin (CHANGE PASSWORD)
 
 ---
 
@@ -263,8 +268,8 @@ Report the uncertainty clearly and wait for operator instruction.
 | 5 | Database creation (fresh Community) | 2026-05-29 | COMPLETE |
 | 6 | Module detection and installation | 2026-05-29 | COMPLETE |
 | 7 | Data import | 2026-05-29 | COMPLETE |
-| 8 | Functional configuration | — | PENDING |
-| 9 | Roadmap and template governance | — | PENDING |
+| 8 | Functional configuration | 2026-05-29 | COMPLETE |
+| 9 | Roadmap and template governance | 2026-05-29 | COMPLETE (docs exist) |
 | 10 | Testing and validation | — | PENDING |
 | 11 | Backup and restore drill | — | PENDING |
 | 12 | Final documentation, GitHub push, handover | — | PENDING |
