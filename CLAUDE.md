@@ -48,7 +48,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 
 ## ACTIVE PHASE
 
-**Current phase:** Phase 3 — Software Factory Structure COMPLETE.
+**Current phase:** Phase 5 COMPLETE. Fresh Community database running on port 8070.
 
 **Completed phases:**
 - [x] Phase -1 — Repository and project boundary setup
@@ -56,29 +56,34 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 - [x] Phase 1 — Project identity and template positioning
 - [x] Phase 2 — Safe backup before work
 - [x] Phase 3 — Software Factory structure created
+- [x] Phase 4 — Odoo environment setup (wamacare.conf, port 8070)
+- [x] Phase 5 — Database created (fresh Community — see DECISION_LOG DEC-007)
 
-**Next phase:** Phase 4 — Local Odoo environment setup (port, config, addons path)
+**Next phase:** Phase 6 — Module registry confirmation + Phase 7 data import
 
-**Pending operator confirmation before proceeding to Phase 5:**
-- [ ] Confirm database name: `wamacare_local` (or provide alternative)
-- [ ] Confirm: restore `mamacare1.dump.zip` OR create fresh database
-- [ ] Confirm: Community Edition confirmed (17.0)
+**Database status:** `wamacare_local` — 63 Community modules installed, HTTP 200 on port 8070.
 
 ---
 
-## DATABASE DUMP AVAILABLE
+## DATABASE STATUS
 
+**Active database:** `wamacare_local` — fresh Odoo 17 Community Edition
+- 63 modules installed (Community)
+- Port: 8070
+- Login: http://localhost:8070
+- Company name: "My Company" (to be renamed to WamaCare/Tiko in Phase 8)
+- No data yet — CSV import pending (Phase 7)
+
+**Original Enterprise dump (reference only):**
 | Field | Value |
 |-------|-------|
 | File | `mamacare1.dump.zip` |
 | Location | `/Users/mac/Documents/Aliyu/ODOO/Projects/TIKO/WamaCare/mamacare1.dump.zip` |
 | Zip size | 19 MB |
-| SQL dump size | 47 MB (dump.sql) |
-| Filestore files | ~1,271 files |
 | Dump date | 2025-12-29 |
-| Format | ZIP containing `dump.sql` (plain SQL) + `filestore/` |
-| Target DB name | `wamacare_local` (proposed) |
-| Restore status | PENDING operator confirmation |
+| Origin | Odoo Enterprise (Odoo.sh/Ubuntu) — 284 modules |
+| Status | Incompatible with local Community — NOT restored (see DEC-007) |
+| Data mined | 86 contacts, 5 projects, 15 employees, 5 LPOs confirmed in dump |
 
 ---
 
@@ -216,13 +221,13 @@ WamaCare/                             ← Git root
 
 | # | Issue | Status |
 |---|-------|--------|
-| 1 | Database not yet restored/created | OPEN — Phase 5 pending |
-| 2 | Odoo version in dump not confirmed | OPEN — verify on restore |
-| 3 | WamaCare-specific port (8070) not configured in conf file | OPEN — Phase 4 |
-| 4 | No wamacare.conf config file yet | OPEN — Phase 4 |
+| 1 | Database created fresh (Community) — CSV import pending | OPEN — Phase 7 |
+| 2 | Dump was Enterprise — not compatible with local Community | RESOLVED — DEC-007 |
+| 3 | Company name is "My Company" — needs rename to Tiko/WamaCare | OPEN — Phase 8 |
+| 4 | No chart of accounts for Nigeria configured | OPEN — Phase 8 |
 | 5 | `Untitled.rtf` in project root is junk | OPEN — do not delete without operator OK |
-| 6 | No custom addons detected yet | OPEN — confirm after restore |
-| 7 | Module checklist XLSX not yet parsed | OPEN — inspect manually |
+| 6 | No custom addons detected | OPEN — will assess post Phase 7 |
+| 7 | Module checklist XLSX not yet parsed | LOW — inspect manually |
 
 ---
 
@@ -244,9 +249,9 @@ Report the uncertainty clearly and wait for operator instruction.
 | 1 | Project identity and template positioning | 2026-05-29 | COMPLETE |
 | 2 | Safe backup before work | 2026-05-29 | COMPLETE |
 | 3 | Software Factory structure created | 2026-05-29 | COMPLETE |
-| 4 | Local Odoo environment setup | — | PENDING |
-| 5 | Database restore or creation | — | PENDING |
-| 6 | Module detection and installation | — | PENDING |
+| 4 | Local Odoo environment setup | 2026-05-29 | COMPLETE |
+| 5 | Database creation (fresh Community) | 2026-05-29 | COMPLETE |
+| 6 | Module detection and installation | — | NEXT |
 | 7 | Data import / restore | — | PENDING |
 | 8 | Functional configuration | — | PENDING |
 | 9 | Roadmap and template governance | — | PENDING |

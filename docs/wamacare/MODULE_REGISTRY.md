@@ -39,13 +39,28 @@
 
 ---
 
-## Confirmed After Restore
+## Confirmed Installed — Phase 5 (2026-05-29)
 
-This table will be updated in Phase 6 with actual installed modules from the restored database.
+Fresh Community database `wamacare_local` — 63 modules installed.
 
-| Module Technical Name | Installed in Dump? | Status |
-|----------------------|-------------------|--------|
-| (to be filled after Phase 5) | — | — |
+**NGO Core modules confirmed:**
+| Module | Technical Name | Status |
+|--------|---------------|--------|
+| Contacts | `contacts` | INSTALLED |
+| Project | `project` | INSTALLED |
+| Purchase | `purchase` | INSTALLED |
+| Accounting | `account`, `account_payment` | INSTALLED |
+| Analytic Accounting | `analytic` | INSTALLED |
+| HR | `hr`, `hr_skills`, `hr_org_chart` | INSTALLED |
+| Expenses | `hr_expense` | INSTALLED |
+| Maintenance | `maintenance`, `hr_maintenance` | INSTALLED |
+| Calendar | `calendar` | INSTALLED |
+| Product | `product`, `uom` | INSTALLED |
+| Project+Purchase bridge | `project_purchase`, `project_account` | INSTALLED |
+| Spreadsheet/Dashboard | `spreadsheet`, `spreadsheet_dashboard` | INSTALLED |
+
+**Note:** Enterprise dump (284 modules) was NOT restored — incompatible with Community Edition.
+See DECISION_LOG DEC-007 for full explanation.
 
 ---
 

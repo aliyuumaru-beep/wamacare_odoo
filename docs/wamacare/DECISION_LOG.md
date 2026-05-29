@@ -67,4 +67,42 @@
 
 ---
 
+---
+
+## DEC-007 — Fresh Community DB instead of Enterprise dump restore
+
+**Date:** 2026-05-29 | **Phase:** 5 | **Status:** ACCEPTED
+
+**Decision:** Create a fresh Odoo 17 Community database (`wamacare_local`) instead of restoring `mamacare1.dump.zip`.
+
+**Reason:** The dump (`mamacare1.dump.zip`) was created on Odoo Enterprise (confirmed by presence of `web_enterprise`, `documents`, `sign`, `planning`, `crm_enterprise`, `ai` modules). The local machine has only Odoo 17 Community Edition. Restoring the Enterprise database to Community caused all core business modules (project, purchase, account, hr_expense) to fail to load. The database was functionally unusable on Community.
+
+**Data confirmed in Enterprise dump before discarding:**
+- Company: `mamacare`
+- 86 contacts (partners, vendors, beneficiaries)
+- 5 projects (matching the 5 programmes in CSVs)
+- 15 employees
+- 5 purchase orders (LPOs)
+- Same vendor and beneficiary data as in the CSV templates
+
+**Alternatives considered:**
+- Get Odoo Enterprise license — operator chose Community
+- Manually downgrade database — complex, risky
+
+**What was lost:** Any data in the Enterprise dump beyond what's in the CSVs. The CSVs cover the core data. The Enterprise-specific features (Documents, Sign, Planning board, AI) are not available in Community.
+
+**Mitigation:** All data from the Enterprise dump is captured in `csv_templates/wamacare/`. CSV import in Phase 7 will restore the same data to the Community database.
+
+---
+
+## DEC-008 — wamacare.conf on port 8070
+
+**Date:** 2026-05-29 | **Phase:** 4 | **Status:** ACCEPTED
+
+**Decision:** Created dedicated `wamacare.conf` at the project root, using port 8070.
+
+**Reason:** FamOil uses port 8069. Separate config file keeps WamaCare settings independent and avoids overwriting FamOil config at `/Users/mac/odoo17/odoo/odoo.conf`.
+
+---
+
 *New decisions to be added as phases progress.*
