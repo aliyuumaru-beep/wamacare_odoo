@@ -1,5 +1,5 @@
 # CLAUDE.md — WamaCare Software Factory Session Anchor
-# Version: 0.1.0 | Last updated: 2026-05-29
+# Version: 0.2.0 | Last updated: 2026-05-29
 
 > This file is read automatically by Claude Code at the start of every session.
 > It is the single source of truth for project state. Keep it current.
@@ -243,6 +243,28 @@ WamaCare/                             ← Git root
 | 5 | `Untitled.rtf` in project root is junk | OPEN — do not delete without operator OK |
 | 6 | No custom addons detected | OPEN — will assess post Phase 7 |
 | 7 | Module checklist XLSX not yet parsed | LOW — inspect manually |
+
+---
+
+## PRODUCT GOVERNANCE
+
+Before proposing, building, or recommending any new feature, read these documents in order:
+
+1. `docs/wamacare/product/BUSINESS_CAPABILITY_MAP.md` — what capabilities exist and their gaps
+2. `docs/wamacare/product/FEATURE_REGISTRY.md` — single source of truth for all features (125 features, IDs assigned)
+3. `docs/wamacare/product/WAMACARE_PRODUCT_ROADMAP.md` — release sequence and gates
+4. `docs/wamacare/product/NEXT_FEATURE.md` — the one highest-priority feature to build next
+5. `docs/wamacare/product/PRIORITIZATION_RULES.md` — the rules that govern all feature decisions
+6. `docs/wamacare/product/WAMACARE_PRODUCT_VISION.md` — product mission, vision, and what WamaCare is NOT
+
+**Before implementing any feature:**
+- Check FEATURE_REGISTRY.md — does it already exist?
+- Check NEXT_FEATURE.md — is this the right feature to build now?
+- Check PRIORITIZATION_RULES.md — does it violate sequence or absolute rules?
+- Never recommend a feature that violates the established roadmap sequence unless explicitly approved by the operator.
+- If a feature is not in the registry, propose the Feature ID and get operator confirmation before implementing.
+
+**Repository governance overrides AI preference.**
 
 ---
 
