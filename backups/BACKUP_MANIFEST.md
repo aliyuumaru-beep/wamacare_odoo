@@ -3,6 +3,7 @@
 | Backup | Date | Type | Status |
 |--------|------|------|--------|
 | `wamacare_20260529_0747/` | 2026-05-29 07:47 | Pre-setup source files | COMPLETE |
+| `wamacare_20260529_0839/` | 2026-05-29 08:39 | Post Phase 7 — DB + filestore + config | COMPLETE |
 
 ---
 
