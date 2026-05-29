@@ -1,0 +1,11 @@
+Name,Product Type,Can be Purchased,Can be Sold,Expense Account
+Diagnostic Services,Service,TRUE,FALSE,Expenses
+Staff Costs,Service,TRUE,FALSE,Expenses
+Insurance Coverage,Service,TRUE,FALSE,Expenses
+Consultancy Services,Service,TRUE,FALSE,Expenses
+Legal Services,Service,TRUE,FALSE,Expenses
+Audit Services,Service,TRUE,FALSE,Expenses
+IT Services,Service,TRUE,FALSE,Expenses
+Medical Equipment,Goods,TRUE,FALSE,Expenses
+Energy Solutions,Goods,TRUE,FALSE,Expenses
+Administrative Costs,Service,TRUE,FALSE,Expenses

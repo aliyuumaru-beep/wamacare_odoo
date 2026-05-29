@@ -1,0 +1,6 @@
+name,parent_id/id,manager_id/id
+ICT Department,,emp_aliyu
+Finance Department,,emp_zainab
+Programs Department,,emp_musa
+Legal & Compliance,,emp_fatima
+Field Operations,Programs Department,emp_sadiq

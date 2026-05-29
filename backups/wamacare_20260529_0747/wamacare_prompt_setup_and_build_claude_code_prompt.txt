@@ -1,0 +1,286 @@
+You are Claude Code operating as an Odoo implementation engineer inside my local machine.
+PROJECT: WamaCare LOCAL PROJECT FOLDER TO INSPECT FIRST: mac-documents-aliyu-odoo-projects-tiko
+OBJECTIVE: Set up WamaCare locally as an Odoo-based project using the software-factory discipline already established in my ERP work. By the end, I want a working local WamaCare Odoo instance, all required modules installed, available databases/backups restored or imported, and full documentation created so another AI or developer can continue without prior context.
+IMPORTANT: Do not guess destructively. Inspect first. Ask me before deleting, overwriting, dropping databases, changing ports, or exposing credentials. Never print passwords, tokens, API keys, database passwords, or private connection strings.
+SOFTWARE FACTORY PRINCIPLES TO FOLLOW:
+	1	Repository memory is more important than AI memory.
+	2	Documentation first.
+	3	Backup before change.
+	4	No undocumented architecture change.
+	5	Prefer native Odoo before custom code.
+	6	Custom code only if native/configuration options are insufficient.
+	7	Every phase must leave the project more reproducible.
+	8	The project must survive AI failure, developer replacement, laptop loss, and future migration.
+	9	Use Git discipline and preserve rollback capability.
+	10	At the end of every phase, update CLAUDE.md.
+PHASE 0 — ORIENTATION AND LOCAL INSPECTION
+First inspect the folder:
+mac-documents-aliyu-odoo-projects-tiko
+Do not change anything yet.
+Find and report:
+	•	Current folder structure
+	•	Existing Git repository status
+	•	Existing Odoo files
+	•	Existing custom addons
+	•	Existing database dumps
+	•	Existing filestore backups
+	•	Existing CSV/XLSX import files
+	•	Existing documentation
+	•	Existing scripts
+	•	Existing config files
+	•	Any WamaCare-specific documents
+	•	Any references to database name, Odoo version, ports, addons paths, or credentials
+	•	Any evidence whether WamaCare is healthcare, hospital, pharmacy, insurance, HMO, clinic, patient-care, or another model
+Create an inspection report:
+docs/wamacare/PHASE_0_LOCAL_INSPECTION.md
+If the folder does not exist, stop and tell me the exact path issue.
+PHASE 1 — CLARIFY PROJECT IDENTITY
+Based on inspected files, infer the WamaCare project identity.
+Create:
+CLAUDE.md
+At minimum include:
+	•	Project name: WamaCare
+	•	Odoo version detected or recommended
+	•	Local deployment environment
+	•	Database name detected or proposed
+	•	Industry/sector inferred from documents
+	•	Installed modules detected
+	•	Required modules detected
+	•	Custom addons detected
+	•	Available database backups
+	•	Available CSV/XLSX data files
+	•	Current active phase
+	•	Known blockers
+	•	Next action checklist
+If unclear, ask me only the critical questions needed to continue:
+	1	Exact Odoo version to use if not detected
+	2	Database name to create/restore
+	3	Whether to restore existing dump or create fresh database
+	4	Whether WamaCare should be Community or Enterprise
+	5	Whether this is for healthcare, pharmacy, HMO, hospital, clinic, or another model
+PHASE 2 — SAFE BACKUP BEFORE WORK
+Before changing anything, create a timestamped backup folder:
+backups/wamacare_<YYYYMMDD>_<HHMM>/
+Back up:
+	•	Existing config files, sanitized
+	•	Existing custom addons
+	•	Existing docs
+	•	Existing import files
+	•	Existing database dumps
+	•	Existing filestore if present
+	•	Existing scripts
+Create:
+backups/wamacare_<YYYYMMDD>_<HHMM>/BACKUP_MANIFEST.md
+The manifest must include:
+	•	Backup date/time
+	•	Files included
+	•	What was not found
+	•	Odoo version if detected
+	•	Database name if detected
+	•	Restore notes
+	•	Risks
+PHASE 3 — CREATE SOFTWARE FACTORY STRUCTURE
+Create or normalize this structure without deleting existing useful files:
+docs/
+  wamacare/
+    architecture/
+    deployment/
+    implementation/
+    testing/
+    sops/
+    data_imports/
+    backups/
+prompts/
+csv_templates/
+custom_addons/
+scripts/
+tests/
+backups/
+.github/
+  workflows/
+Create these documents:
+docs/wamacare/README.md
+docs/wamacare/ARCHITECTURE.md
+docs/wamacare/DEPLOYMENT_GUIDE.md
+docs/wamacare/MODULE_REGISTRY.md
+docs/wamacare/DATA_IMPORT_PLAN.md
+docs/wamacare/TESTING_GUIDE.md
+docs/wamacare/BACKUP_AND_RECOVERY.md
+docs/wamacare/IMPLEMENTATION_HISTORY.md
+docs/wamacare/DECISION_LOG.md
+docs/wamacare/KNOWN_ISSUES.md
+PHASE 4 — LOCAL ODOO ENVIRONMENT SETUP
+Inspect whether Odoo is already installed locally.
+Report:
+	•	Odoo executable path
+	•	Odoo version
+	•	Python version
+	•	PostgreSQL status
+	•	PostgreSQL version
+	•	Odoo config file path
+	•	addons paths
+	•	active ports
+	•	available databases
+	•	local service method: direct command, Docker, virtualenv, Homebrew, or other
+If Odoo is not installed, recommend the safest setup method for this Mac and ask before installing.
+If Odoo is installed, configure WamaCare locally using:
+	•	A dedicated database
+	•	Dedicated addons path
+	•	Dedicated config file if appropriate
+	•	No credential exposure
+	•	No overwrite of other projects
+PHASE 5 — DATABASE RESTORE OR DATABASE CREATION
+Search for WamaCare database dumps and filestore backups.
+If a valid database dump and filestore exist:
+	•	Restore into a new database name, preferably wamacare_local
+	•	Restore filestore correctly
+	•	Validate attachments
+	•	Validate installed modules
+	•	Validate record counts
+	•	Validate menus open
+If no valid dump exists:
+	•	Create a fresh WamaCare database
+	•	Install required base modules
+	•	Prepare import sequence from CSV/XLSX files
+Do not drop any existing database unless I explicitly approve.
+PHASE 6 — MODULE DETECTION AND INSTALLATION
+From inspected documents and files, determine required modules.
+Create a module matrix with:
+	•	Module name
+	•	Native Odoo module technical name
+	•	Purpose
+	•	Required/optional
+	•	Community/Enterprise/third-party/custom
+	•	Installation status
+	•	Configuration required
+	•	Dependency notes
+Install required modules safely.
+Likely module categories to evaluate:
+	•	Contacts
+	•	CRM
+	•	Sales
+	•	Purchase
+	•	Inventory
+	•	Accounting/Invoicing
+	•	HR
+	•	Employees
+	•	Approvals
+	•	Documents or attachment management
+	•	Helpdesk/service desk alternative
+	•	Website/portal if needed
+	•	Project
+	•	Calendar
+	•	Discuss
+	•	Healthcare/patient/pharmacy/clinic-specific custom or third-party modules if found in project files
+Do not invent healthcare workflows. Infer from local WamaCare documents.
+PHASE 7 — DATA IMPORT / RESTORE OF EXISTING DATABASE MATERIAL
+Locate all CSV, XLSX, XML, SQL, and backup files.
+Create:
+docs/wamacare/data_imports/IMPORT_SEQUENCE.md
+For every data file, identify:
+	•	File name
+	•	Model/table likely targeted
+	•	Required import order
+	•	Dependencies
+	•	Whether external IDs exist
+	•	Whether file needs cleaning
+	•	Whether it is safe to import
+	•	Whether test import is required first
+Import data in safe order:
+	1	Companies/settings
+	2	Users/groups if applicable
+	3	Contacts/partners
+	4	Products/services
+	5	Accounts/taxes if applicable
+	6	Warehouses/locations if applicable
+	7	Operational records
+	8	Historical records only if safe
+If files are messy, create cleaned versions under:
+csv_templates/wamacare_cleaned/
+Do not import uncertain files without reporting the risk.
+PHASE 8 — WAMACARE FUNCTIONAL CONFIGURATION
+Configure the WamaCare workflows based on discovered documents.
+Document:
+	•	User roles
+	•	Departments
+	•	Approval flows
+	•	Services/products
+	•	Customer/patient/member/vendor records
+	•	Core transactions
+	•	Reporting needs
+	•	Audit/security needs
+If the project is healthcare-related, pay special attention to:
+	•	Patient/member privacy
+	•	Role-based access
+	•	Audit trail
+	•	Document attachment handling
+	•	Consent/authorization documents if present
+	•	Avoiding unnecessary exposure of sensitive data
+PHASE 9 — TESTING AND VALIDATION
+Create and run validation tests.
+Create:
+docs/wamacare/testing/PHASE_9_VALIDATION_REPORT.md
+Validate:
+	•	Odoo starts successfully
+	•	WamaCare database opens
+	•	Required modules installed
+	•	Custom addons load without errors
+	•	Menus open
+	•	Core records exist
+	•	Imported data counts are reasonable
+	•	Attachments work if filestore restored
+	•	Users/permissions are sensible
+	•	No missing external IDs from imports
+	•	No broken model references
+	•	No server errors in logs
+Run basic smoke tests for each core workflow found in WamaCare docs.
+PHASE 10 — BACKUP AND RESTORE DRILL
+Create a fresh post-setup backup:
+backups/wamacare_post_setup_<YYYYMMDD>_<HHMM>/
+Include:
+	•	Database dump
+	•	Filestore
+	•	Sanitized config
+	•	Custom addons
+	•	Docs
+	•	Scripts
+	•	Import files
+Then perform a restore drill into a separate test database:
+wamacare_restore_test
+Validate:
+	•	Database restores
+	•	Filestore restores
+	•	Attachments work
+	•	Modules load
+	•	Key records exist
+	•	Menus open
+Create:
+docs/wamacare/BACKUP_AND_RECOVERY.md docs/wamacare/RESTORE_DRILL.md
+PHASE 11 — FINAL DOCUMENTATION AND HANDOVER
+Update:
+CLAUDE.md docs/wamacare/README.md docs/wamacare/IMPLEMENTATION_HISTORY.md docs/wamacare/DECISION_LOG.md docs/wamacare/KNOWN_ISSUES.md docs/wamacare/MODULE_REGISTRY.md docs/wamacare/DEPLOYMENT_GUIDE.md
+Final output must include:
+	•	What was found
+	•	What was restored
+	•	What was created
+	•	Database name
+	•	Odoo version
+	•	Local access URL
+	•	Installed modules
+	•	Custom addons
+	•	Data imported
+	•	Backup location
+	•	Restore drill result
+	•	Remaining issues
+	•	Recommended next phase
+STOP CONDITIONS: Stop and ask me before:
+	•	Deleting files
+	•	Dropping databases
+	•	Overwriting a database
+	•	Installing unknown third-party modules
+	•	Changing global Odoo config
+	•	Pushing to GitHub
+	•	Exposing credentials
+	•	Making paid purchases
+	•	Making irreversible system changes
+FINAL SUCCESS CRITERIA: By the end, WamaCare should be locally accessible, documented, backed up, restorable, and understandable by another developer or AI using only the repository documents.
