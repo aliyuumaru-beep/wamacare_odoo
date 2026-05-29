@@ -48,7 +48,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 
 ## ACTIVE PHASE
 
-**Current phase:** Phase 10 COMPLETE — 20/20 validation checks PASS. Phase 11 (restore drill) next.
+**Current phase:** Phase 11 COMPLETE — restore drill PASS, RTO 45 seconds. Phase 12 (final push) next.
 
 **Completed phases:**
 - [x] Phase -1 — Repository and project boundary setup
@@ -59,7 +59,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 - [x] Phase 4 — Odoo environment setup (wamacare.conf, port 8070)
 - [x] Phase 5 — Database created (fresh Community — see DECISION_LOG DEC-007)
 
-**Next phase:** Phase 11 — Backup and restore drill (RESTORE_DRILL.md)
+**Next phase:** Phase 12 — Final documentation, version tag, governance registration
 
 **Database status:** `wamacare_local` — LIVE with data.
 - 65 modules installed (+ l10n_ng + base_vat for Nigeria VAT/WHT)
@@ -271,5 +271,5 @@ Report the uncertainty clearly and wait for operator instruction.
 | 8 | Functional configuration | 2026-05-29 | COMPLETE |
 | 9 | Roadmap and template governance | 2026-05-29 | COMPLETE (docs exist) |
 | 10 | Testing and validation | 2026-05-29 | COMPLETE — 20/20 PASS |
-| 11 | Backup and restore drill | — | PENDING |
+| 11 | Backup and restore drill | 2026-05-29 | COMPLETE — PASS, RTO 45s |
 | 12 | Final documentation, GitHub push, handover | — | PENDING |

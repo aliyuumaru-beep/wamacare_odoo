@@ -1,0 +1,9 @@
+[options]
+db_name = wamacare_local
+db_user = odoo
+db_host = False
+db_port = False
+http_port = 8070
+addons_path = /Users/mac/odoo17/odoo/odoo/addons,/Users/mac/Documents/Aliyu/ODOO/Projects/TIKO/WamaCare/custom_addons,/Users/mac/oca_web
+log_level = info
+logfile = False
