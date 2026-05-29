@@ -1,7 +1,20 @@
 # WAMACARE_PRODUCT_ROADMAP.md — WamaCare Product Roadmap
 
-**Version:** 1.0 | **Date:** 2026-05-29
+**Version:** 1.1 | **Date:** 2026-05-29
 **Authority:** This roadmap governs all future feature development. Deviations require a recorded decision in DECISION_LOG.md.
+
+## Governance Documents
+
+This roadmap is governed by three additional documents — read all before planning any feature:
+
+| Document | Purpose |
+|----------|---------|
+| [PRODUCT_MATURITY_ROADMAP.md](./PRODUCT_MATURITY_ROADMAP.md) | Capability-centric maturity phases (A→E). Replaces release thinking with maturity thinking. |
+| [FEATURE_DEPENDENCY_MAP.md](./FEATURE_DEPENDENCY_MAP.md) | What each feature depends on and what it blocks. Use before planning any feature. |
+| [CRITICAL_PATH.md](./CRITICAL_PATH.md) | Minimum viable features for each organisational readiness level. The sequencing authority. |
+
+**Current maturity position: Late Phase A → entering Phase B**
+**Current critical path step: Step 1 — BEN-006 (Access Restriction)**
 
 ---
 

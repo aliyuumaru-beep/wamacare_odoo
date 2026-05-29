@@ -250,21 +250,28 @@ WamaCare/                             ← Git root
 
 Before proposing, building, or recommending any new feature, read these documents in order:
 
-1. `docs/wamacare/product/BUSINESS_CAPABILITY_MAP.md` — what capabilities exist and their gaps
-2. `docs/wamacare/product/FEATURE_REGISTRY.md` — single source of truth for all features (125 features, IDs assigned)
-3. `docs/wamacare/product/WAMACARE_PRODUCT_ROADMAP.md` — release sequence and gates
-4. `docs/wamacare/product/NEXT_FEATURE.md` — the one highest-priority feature to build next
-5. `docs/wamacare/product/PRIORITIZATION_RULES.md` — the rules that govern all feature decisions
-6. `docs/wamacare/product/WAMACARE_PRODUCT_VISION.md` — product mission, vision, and what WamaCare is NOT
+1. `docs/wamacare/product/PRODUCT_MATURITY_ROADMAP.md` — current maturity phase (A→E) and exit criteria
+2. `docs/wamacare/product/FEATURE_DEPENDENCY_MAP.md` — what each feature depends on and what it blocks
+3. `docs/wamacare/product/CRITICAL_PATH.md` — minimum features for each readiness level
+4. `docs/wamacare/product/FEATURE_REGISTRY.md` — single source of truth (125 features with IDs)
+5. `docs/wamacare/product/NEXT_FEATURE.md` — the one highest-priority feature to build next
+6. `docs/wamacare/product/PRIORITIZATION_RULES.md` — the rules that govern all feature decisions
+7. `docs/wamacare/product/WAMACARE_PRODUCT_ROADMAP.md` — release sequence and gates
+8. `docs/wamacare/product/BUSINESS_CAPABILITY_MAP.md` — capability status across 15 domains
+9. `docs/wamacare/product/WAMACARE_PRODUCT_VISION.md` — mission, vision, and what WamaCare is NOT
 
-**Before implementing any feature:**
-- Check FEATURE_REGISTRY.md — does it already exist?
-- Check NEXT_FEATURE.md — is this the right feature to build now?
-- Check PRIORITIZATION_RULES.md — does it violate sequence or absolute rules?
-- Never recommend a feature that violates the established roadmap sequence unless explicitly approved by the operator.
-- If a feature is not in the registry, propose the Feature ID and get operator confirmation before implementing.
+**Before implementing any feature, determine:**
+1. Does it already exist in FEATURE_REGISTRY.md? (check by ID and name)
+2. Are its dependencies satisfied? (check FEATURE_DEPENDENCY_MAP.md)
+3. Is it on the critical path? (check CRITICAL_PATH.md)
+4. Does it advance the current maturity phase? (check PRODUCT_MATURITY_ROADMAP.md)
+5. Does it violate sequence or absolute rules? (check PRIORITIZATION_RULES.md)
 
-**Repository governance overrides AI preference.**
+**Current maturity position: Late Phase A → entering Phase B**
+**Current critical path step: Step 1 — BEN-006 (Beneficiary Access Restriction)**
+**Current next feature: BEN-006 — see NEXT_FEATURE.md**
+
+**Repository strategy overrides AI preference.**
 
 ---
 
