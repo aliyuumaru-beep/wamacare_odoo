@@ -3,7 +3,9 @@
 **Test Date:** 2026-05-30
 **Database:** `wamacare_local`
 **Tester:** Claude Code (automated RPC + SQL)
-**Result:** **PARTIAL PASS — core flow proven, 3 configuration gaps found**
+**Result:** **PASS — core flow proven. 3 defects found and fixed. 1 manual step remaining (reconciliation).**
+
+**Final state:** ₦850,000 spend tracked | 7.08% budget utilisation showing | 1 analytic line on Maternal Health | 2 posted journal entries
 
 ---
 

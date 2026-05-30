@@ -9,8 +9,8 @@
 
 | Field | Value |
 |-------|-------|
-| **Feature ID** | FIN-005 (analytic lines) |
-| **Feature Name** | Analytic Accounting — Generate Lines from Invoices |
+| **Feature ID** | PROC-002 / PROC-004 / PROC-005 |
+| **Feature Name** | Complete Procurement Cycle — Reconcile Bill with Payment |
 | **Domain** | Beneficiary Management |
 | **Priority** | HIGH |
 | **Current Status** | PLANNED |
