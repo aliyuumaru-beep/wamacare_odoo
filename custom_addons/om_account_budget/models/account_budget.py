@@ -138,9 +138,9 @@ class CrossoveredBudgetLines(models.Model):
 
                     if 'percentage' in fields:
                         if group_line['theoritical_amount']:
-                            # use a weighted average
+                            # store as ratio (0-1) to match individual line and widget="percentage" display
                             group_line['percentage'] = float(
-                                (group_line['practical_amount'] or 0.0) / group_line['theoritical_amount']) * 100
+                                (group_line['practical_amount'] or 0.0) / group_line['theoritical_amount'])
 
         return result
 
