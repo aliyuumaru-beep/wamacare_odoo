@@ -165,7 +165,7 @@
 | BEN-003 | Geolocation Mapping | FCT area coordinates on beneficiary records | MEDIUM | PARTIAL | 1.0 |
 | BEN-004 | Gender Tagging | Female/Male category tags | HIGH | PARTIAL | 1.0 |
 | BEN-005 | Anonymised Naming | BEN-XXX reference scheme | HIGH | PARTIAL | 1.0 |
-| BEN-006 | Access Restriction | Record-level access rules for beneficiary data | HIGH | PLANNED | 1.0 |
+| BEN-006 | Access Restriction | Record-level access rules for beneficiary data | HIGH | COMPLETED | 1.0 |
 | BEN-007 | Beneficiary Consent Tracking | Document consent for data processing | HIGH | PLANNED | 1.1 |
 | BEN-008 | Case Management | Structured case notes and follow-up | HIGH | PLANNED | 1.1 |
 | BEN-009 | Case Notes | Timestamped case notes per beneficiary | HIGH | PLANNED | 1.1 |
