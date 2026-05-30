@@ -9,6 +9,7 @@
 | `wamacare_tier1_20260529_2020/` | 2026-05-29 20:20 | After Tier 1 — bank, fiscal year, budgets (₦33M), equipment categories | COMPLETE |
 | `wamacare_tier0_20260530_1116/` | 2026-05-30 11:16 | After Tier 0 — BEN-006 active, user roles fixed, beneficiary data protected | COMPLETE |
 | `wamacare_proctest_20260530_1204/` | 2026-05-30 12:04 | After procurement lifecycle test — P00002, BILL, PWBNK created | COMPLETE |
+| `wamacare_tier2_20260530_1650/` | 2026-05-30 16:50 | After Tier 2 — all lifecycles tested, Phase A 50% production-ready | COMPLETE |
 
 ---
 

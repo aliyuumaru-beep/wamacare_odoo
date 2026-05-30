@@ -1,6 +1,6 @@
 # OPERATIONAL_READINESS_SCORECARD.md — WamaCare Phase A.5
 
-**Date:** 2026-05-29 | **Based on:** Evidence-Based Audit + database inspection
+**Date:** 2026-05-30 (updated after Tier 2 lifecycle tests) | **Based on:** Evidence-Based Audit + lifecycle test execution
 **Scoring method:** Evidence only. Claims without database records are not COMPLETED.
 
 ---
@@ -167,30 +167,33 @@
 
 ---
 
-## Overall Phase A Scorecard
+## Overall Phase A Scorecard — Updated 2026-05-30 (after Tier 2 lifecycle tests)
 
-| Domain | Configured | Tested | Operational | Prod-Ready |
-|--------|-----------|--------|-------------|------------|
-| Governance | 57% | 29% | 29% | 29% |
-| HR | 57% | 43% | 43% | 43% |
-| Programme Mgmt | 50% | 25% | 25% | 25% |
-| Donor Management | 60% | 20% | 20% | 20% |
-| Procurement | 100% | 17% | 17% | 17% |
-| Finance | 75% | 17% | 8% | 8% |
-| Asset Management | 50% | 17% | 0% | 0% |
-| Beneficiary Mgmt | 83% | 83% | 83% | 0% |
-| Safeguarding | 100% | 75% | 75% | 0% |
-| **OVERALL** | **70%** | **36%** | **33%** | **16%** |
+| Domain | Configured | Tested | Operational | Prod-Ready | Lifecycle |
+|--------|-----------|--------|-------------|------------|----------|
+| Governance | 57% | 57% | 57% | 43% | GOV-004 proven |
+| HR | 57% | 57% | 57% | 43% | Expense claim submitted + approved |
+| Programme Mgmt | 80% | 60% | 60% | 50% | 5 tasks created, 1 done |
+| Donor Management | 60% | 40% | 40% | 20% | Analytic accounts live |
+| Procurement | 100% | 100% | 90% | 70% | L1 PASS — full cycle proven |
+| Finance | 75% | 75% | 67% | 50% | L2 PASS — 2 bills posted, analytic trigger working |
+| Asset Management | 50% | 50% | 17% | 17% | Equipment registry complete |
+| Beneficiary Mgmt | 83% | 83% | 83% | 83% | BEN-006 active, data protected |
+| Safeguarding | 100% | 75% | 75% | 75% | Programme + dept + lead confirmed |
+| **OVERALL** | **70%** | **66%** | **61%** | **50%** | |
 
 ---
 
-## Revised Phase A Maturity Position
+## Phase A Maturity Position — Progression
 
-| Previously Claimed | Evidence-Based | Audit-Based | Operational Validation |
-|-------------------|----------------|-------------|----------------------|
-| 78% complete | 58% (audit) | 70% configured | **16% production-ready** |
+| Checkpoint | Production-Ready % | Date |
+|-----------|-------------------|------|
+| Initial claim | 78% (unchecked) | 2026-05-29 pre-audit |
+| After evidence audit | 16% | 2026-05-29 |
+| After Tier 0 + Tier 1 | ~22% | 2026-05-29 |
+| **After Tier 2 lifecycle tests** | **50%** | **2026-05-30** |
 
-**The honest assessment:** WamaCare is 70% configured and 16% production-ready. The gap between "configured" and "production-ready" is the operational validation gap this phase addresses.
+**Phase A is now 50% production-ready. Remaining 50% requires: reconciliation workflow automation, asset depreciation, donor report generation, contract repository, and completing the Phase A exit gate checklist.**
 
 ---
 

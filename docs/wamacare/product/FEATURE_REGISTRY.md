@@ -46,7 +46,7 @@
 | HR-001 | Employee Records | 10 employees across 5 departments | HIGH | COMPLETED | 1.0 |
 | HR-002 | Org Chart | Visual department hierarchy | MEDIUM | COMPLETED | 1.0 |
 | HR-003 | Job Positions | 9 job positions defined | MEDIUM | COMPLETED | 1.0 |
-| HR-004 | Expense Claims | Staff expense submission and approval | HIGH | INSTALLED | 1.0 |
+| HR-004 | Expense Claims | Staff expense submission and approval | HIGH | COMPLETED | 1.0 |
 | HR-005 | Skills Tracking | Employee skills catalogue | MEDIUM | INSTALLED | 1.0 |
 | HR-006 | Staff Onboarding Checklist | Structured onboarding workflow | MEDIUM | NOT STARTED | 1.0 |
 | HR-007 | Training Records | Training attendance and certification log | HIGH | PLANNED | 1.0 |
@@ -66,7 +66,7 @@
 | PROG-002 | Analytic Account per Programme | All 5 programmes linked to analytic accounts | HIGH | COMPLETED | 1.0 |
 | PROG-003 | Budget per Programme | Budget module installed and linked | HIGH | INSTALLED | 1.0 |
 | PROG-004 | Activity Calendar | Calendar module installed | MEDIUM | INSTALLED | 1.0 |
-| PROG-005 | Task and Activity Tracking | Project tasks available per programme | HIGH | INSTALLED | 1.0 |
+| PROG-005 | Task and Activity Tracking | Project tasks available per programme | HIGH | COMPLETED | 1.0 |
 | PROG-006 | Programme Dashboard | Spreadsheet dashboard for programme view | HIGH | NOT STARTED | 1.0 |
 | PROG-007 | Milestone Tracking | Programme milestone configuration | MEDIUM | INSTALLED | 1.0 |
 | PROG-008 | Budget vs Actual Reporting | Per-programme expenditure vs budget | HIGH | PLANNED | 1.0 |
@@ -97,8 +97,8 @@
 | PROC-001 | Vendor Management | 17 vendors onboarded | HIGH | COMPLETED | 1.0 |
 | PROC-002 | Local Purchase Order (LPO) | LPO creation and tracking | HIGH | PARTIAL | 1.0 |
 | PROC-003 | LPO Approval Workflow | Two-step approval at ₦200,000 threshold | HIGH | COMPLETED | 1.0 |
-| PROC-004 | Vendor Invoice Processing | Vendor bill entry and approval | HIGH | PARTIAL | 1.0 |
-| PROC-005 | Payment Approval | Multi-step payment authorisation | HIGH | PARTIAL | 1.0 |
+| PROC-004 | Vendor Invoice Processing | Vendor bill entry and approval | HIGH | COMPLETED | 1.0 |
+| PROC-005 | Payment Approval | Multi-step payment authorisation | HIGH | COMPLETED | 1.0 |
 | PROC-006 | Procurement Reports | Standard purchase PDF reports | MEDIUM | INSTALLED | 1.0 |
 | PROC-007 | Budget Pre-Check | Block LPO if over budget | HIGH | PLANNED | 1.0 |
 | PROC-008 | Vendor Performance Rating | Track vendor delivery quality | LOW | PLANNED | 1.2 |
@@ -115,7 +115,7 @@
 | FIN-003 | Nigeria VAT (7.5%) | FIRS VAT configuration | HIGH | COMPLETED | 1.0 |
 | FIN-004 | Withholding Tax (WHT) | FIRS WHT accounts and tax | HIGH | COMPLETED | 1.0 |
 | FIN-005 | Analytic Accounting | Programme-level cost tracking | HIGH | COMPLETED | 1.0 |
-| FIN-006 | Budget Management | Programme budget entry and tracking | HIGH | INSTALLED | 1.0 |
+| FIN-006 | Budget Management | Programme budget entry and tracking | HIGH | COMPLETED | 1.0 |
 | FIN-007 | Asset Depreciation | Fixed asset depreciation schedules | HIGH | INSTALLED | 1.0 |
 | FIN-008 | Recurring Payments | Automated recurring transactions | MEDIUM | INSTALLED | 1.0 |
 | FIN-009 | Daily Financial Reports | om_account_daily_reports | MEDIUM | INSTALLED | 1.0 |
@@ -208,7 +208,7 @@
 | ID | Feature | Description | Priority | Status | Release |
 |----|---------|-------------|---------|--------|---------|
 | ME-001 | M&E Programme | "Monitoring & Evaluation Program" active | HIGH | COMPLETED | 1.0 |
-| ME-002 | Programme Task Completion | Track activity completion via project tasks | HIGH | INSTALLED | 1.0 |
+| ME-002 | Programme Task Completion | Track activity completion via project tasks | HIGH | COMPLETED | 1.0 |
 | ME-003 | Budget vs Actual | Programme financial performance | HIGH | INSTALLED | 1.0 |
 | ME-004 | Programme Dashboard | Spreadsheet dashboard engine installed | HIGH | NOT STARTED | 1.0 |
 | ME-005 | Outcome Indicator Fields | Custom fields for programme KPIs | HIGH | PLANNED | 1.2 |

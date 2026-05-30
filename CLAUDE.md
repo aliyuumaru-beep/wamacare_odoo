@@ -48,7 +48,7 @@ python /Users/mac/odoo17/odoo/odoo-bin \
 
 ## ACTIVE PHASE
 
-**Current phase:** Phase 11 COMPLETE — restore drill PASS, RTO 45 seconds. Phase 12 (final push) next.
+**Current phase:** Tier 2 Lifecycle Tests IN PROGRESS. Phase A 50% production-ready.
 
 **Completed phases:**
 - [x] Phase -1 — Repository and project boundary setup
