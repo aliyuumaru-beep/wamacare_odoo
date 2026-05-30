@@ -8,6 +8,7 @@
 | `wamacare_phase11_20260529_1441/` | 2026-05-29 14:41 | Phase 11 restore drill — 5MB dump, 423 files. Drill PASS, RTO 45s | COMPLETE |
 | `wamacare_tier1_20260529_2020/` | 2026-05-29 20:20 | After Tier 1 — bank, fiscal year, budgets (₦33M), equipment categories | COMPLETE |
 | `wamacare_tier0_20260530_1116/` | 2026-05-30 11:16 | After Tier 0 — BEN-006 active, user roles fixed, beneficiary data protected | COMPLETE |
+| `wamacare_proctest_20260530_1204/` | 2026-05-30 12:04 | After procurement lifecycle test — P00002, BILL, PWBNK created | COMPLETE |
 
 ---
 

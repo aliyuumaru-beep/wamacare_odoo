@@ -29,7 +29,7 @@
 | GOV-001 | Department Structure | 5 WamaCare departments with managers | HIGH | COMPLETED | 1.0 |
 | GOV-002 | Role-Based Access Control | 5 user roles with appropriate permissions | HIGH | COMPLETED | 1.0 |
 | GOV-003 | Audit Trail (Chatter) | All records have chatter for activity log | HIGH | COMPLETED | 1.0 |
-| GOV-004 | Purchase Approval Workflow | Two-step LPO approval at ₦200,000 | HIGH | COMPLETED | 1.0 |
+| GOV-004 | Purchase Approval Workflow | Two-step LPO approval at ₦200,000 | HIGH | COMPLETED | 1.0 |  <!-- VERIFIED 2026-05-30 via P00003 -->|
 | GOV-005 | Two-Factor Authentication | TOTP available for all users | MEDIUM | INSTALLED | 1.0 |
 | GOV-006 | Fiscal Year Management | Annual fiscal year close and lock | MEDIUM | NOT STARTED | 1.0 |
 | GOV-007 | Contract Repository | Central store for staff contracts, MOUs | HIGH | PLANNED | 1.0 |
@@ -95,10 +95,10 @@
 | ID | Feature | Description | Priority | Status | Release |
 |----|---------|-------------|---------|--------|---------|
 | PROC-001 | Vendor Management | 17 vendors onboarded | HIGH | COMPLETED | 1.0 |
-| PROC-002 | Local Purchase Order (LPO) | LPO creation and tracking | HIGH | INSTALLED | 1.0 |
-| PROC-003 | LPO Approval Workflow | Two-step approval at ₦200,000 threshold | HIGH | INSTALLED | 1.0 |
-| PROC-004 | Vendor Invoice Processing | Vendor bill entry and approval | HIGH | INSTALLED | 1.0 |
-| PROC-005 | Payment Approval | Multi-step payment authorisation | HIGH | INSTALLED | 1.0 |
+| PROC-002 | Local Purchase Order (LPO) | LPO creation and tracking | HIGH | PARTIAL | 1.0 |
+| PROC-003 | LPO Approval Workflow | Two-step approval at ₦200,000 threshold | HIGH | COMPLETED | 1.0 |
+| PROC-004 | Vendor Invoice Processing | Vendor bill entry and approval | HIGH | PARTIAL | 1.0 |
+| PROC-005 | Payment Approval | Multi-step payment authorisation | HIGH | PARTIAL | 1.0 |
 | PROC-006 | Procurement Reports | Standard purchase PDF reports | MEDIUM | INSTALLED | 1.0 |
 | PROC-007 | Budget Pre-Check | Block LPO if over budget | HIGH | PLANNED | 1.0 |
 | PROC-008 | Vendor Performance Rating | Track vendor delivery quality | LOW | PLANNED | 1.2 |
