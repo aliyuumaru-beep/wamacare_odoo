@@ -32,7 +32,7 @@
 | GOV-004 | Purchase Approval Workflow | Two-step LPO approval at ₦200,000 | HIGH | COMPLETED | 1.0 |  <!-- VERIFIED 2026-05-30 via P00003 -->|
 | GOV-005 | Two-Factor Authentication | TOTP available for all users | MEDIUM | INSTALLED | 1.0 |
 | GOV-006 | Fiscal Year Management | Annual fiscal year close and lock | MEDIUM | NOT STARTED | 1.0 |
-| GOV-007 | Contract Repository | Central store for staff contracts, MOUs | HIGH | PLANNED | 1.0 |
+| GOV-007 | Contract Repository | Central store for staff contracts, MOUs | HIGH | PARTIAL | 1.0 |
 | GOV-008 | Contract Expiry Alerts | Automated alerts before contract expiry | MEDIUM | PLANNED | 1.0 |
 | GOV-009 | SOP / Policy Repository | Digital storage for policies and procedures | MEDIUM | PLANNED | 1.1 |
 | GOV-010 | General Approval Workflow | Multi-level approval for non-procurement requests | MEDIUM | PLANNED | 1.1 |

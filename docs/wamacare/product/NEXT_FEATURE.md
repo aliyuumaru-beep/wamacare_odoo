@@ -9,8 +9,8 @@
 
 | Field | Value |
 |-------|-------|
-| **Feature ID** | PROC-002 / PROC-004 / PROC-005 |
-| **Feature Name** | Complete Procurement Cycle — Reconcile Bill with Payment |
+| **Feature ID** | PROG-008 |
+| **Feature Name** | Budget vs Actual Reporting — Donor-ready PDF |
 | **Domain** | Beneficiary Management |
 | **Priority** | HIGH |
 | **Current Status** | PLANNED |
