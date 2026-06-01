@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wamacare_case_user,wamacare.case user,model_wamacare_case,base.group_user,1,1,1,0
+access_wamacare_case_manager,wamacare.case manager,model_wamacare_case,project.group_project_manager,1,1,1,1
+access_wamacare_case_note_user,wamacare.case.note user,model_wamacare_case_note,base.group_user,1,1,1,0
+access_wamacare_case_note_manager,wamacare.case.note manager,model_wamacare_case_note,project.group_project_manager,1,1,1,1

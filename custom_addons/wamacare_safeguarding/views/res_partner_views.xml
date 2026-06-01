@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_safeguarding_form" model="ir.ui.view">
+        <field name="name">res.partner.safeguarding.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Smart button for cases -->
+            <div name="button_box" position="inside">
+                <button name="action_view_cases"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-shield"
+                        invisible="x_case_count == 0">
+                    <field name="x_case_count" widget="statinfo" string="Cases"/>
+                </button>
+            </div>
+
+            <!-- Consent + Safeguarding tab -->
+            <notebook position="inside">
+                <page string="Consent &amp; Safeguarding" name="wamacare_safeguarding">
+
+                    <group string="BEN-007 — Data Consent (NDPR)" col="2">
+                        <field name="x_consent_given" widget="boolean_toggle"/>
+                        <field name="x_consent_date"
+                               required="x_consent_given"/>
+                        <field name="x_consent_method"
+                               required="x_consent_given"/>
+                        <field name="x_consent_notes" colspan="2"/>
+                    </group>
+
+                    <group string="SAFE-005 — Safeguarding Alert" col="2">
+                        <field name="x_safeguarding_flag" widget="boolean_toggle"/>
+                        <field name="x_safeguarding_status"
+                               invisible="not x_safeguarding_flag"/>
+                        <field name="x_safeguarding_flag_date"
+                               invisible="not x_safeguarding_flag"/>
+                        <field name="x_safeguarding_flag_raised_by"
+                               invisible="not x_safeguarding_flag"/>
+                        <field name="x_safeguarding_flag_reason" colspan="2"
+                               invisible="not x_safeguarding_flag"
+                               required="x_safeguarding_flag"/>
+                    </group>
+
+                    <group string="Cases" col="1"
+                           invisible="x_case_count == 0">
+                        <button name="action_view_cases"
+                                type="object"
+                                string="View All Cases"
+                                class="btn-secondary"/>
+                    </group>
+
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
