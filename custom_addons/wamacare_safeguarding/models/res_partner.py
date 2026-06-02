@@ -26,6 +26,34 @@ class ResPartner(models.Model):
         string='Consent Notes',
         help='Additional notes about the consent obtained',
     )
+    x_consent_form_ids = fields.Many2many(
+        'ir.attachment',
+        'partner_consent_form_rel',
+        'partner_id',
+        'attachment_id',
+        string='Signed Consent Form(s)',
+        help='Upload the signed consent document when consent method is Written.',
+    )
+
+    # ── Enrolment record ─────────────────────────────────────
+    x_enrolled_by = fields.Many2one(
+        'res.users',
+        string='Enrolled By',
+        default=lambda self: self.env.uid,
+        readonly=True,
+        help='Staff member who registered this beneficiary.',
+    )
+    x_enrollment_date = fields.Date(
+        string='Enrolment Date',
+        default=fields.Date.today,
+        readonly=True,
+        help='Date this beneficiary was first registered in the system.',
+    )
+    x_enrolling_programme = fields.Many2one(
+        'project.project',
+        string='Enrolling Programme',
+        help='Programme under which this beneficiary was first registered.',
+    )
 
     # ── SAFE-005: Safeguarding Alert Flag ─────────────────────
     x_safeguarding_flag = fields.Boolean(

@@ -5,7 +5,8 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <!-- Smart button for cases -->
+
+            <!-- Smart button: case count -->
             <div name="button_box" position="inside">
                 <button name="action_view_cases"
                         type="object"
@@ -16,20 +17,41 @@
                 </button>
             </div>
 
-            <!-- Consent + Safeguarding tab -->
+            <!-- Consent & Safeguarding tab -->
             <notebook position="inside">
                 <page string="Consent &amp; Safeguarding" name="wamacare_safeguarding">
 
-                    <group string="BEN-007 — Data Consent (NDPR)" col="2">
+                    <!-- Who registered this beneficiary -->
+                    <group string="Enrolment" col="3">
+                        <field name="x_enrolled_by" readonly="1"/>
+                        <field name="x_enrollment_date" readonly="1"/>
+                        <field name="x_enrolling_programme"/>
+                    </group>
+
+                    <separator/>
+
+                    <!-- Consent (NDPR) -->
+                    <group string="Data Consent (NDPR)" col="2">
                         <field name="x_consent_given" widget="boolean_toggle"/>
                         <field name="x_consent_date"
                                required="x_consent_given"/>
                         <field name="x_consent_method"
                                required="x_consent_given"/>
                         <field name="x_consent_notes" colspan="2"/>
+
+                        <!-- Signed form upload — only visible when written consent selected -->
+                        <field name="x_consent_form_ids"
+                               widget="many2many_binary"
+                               colspan="2"
+                               invisible="x_consent_method != 'written'"
+                               string="Signed Consent Form(s)"
+                               required="x_consent_method == 'written' and x_consent_given"/>
                     </group>
 
-                    <group string="SAFE-005 — Safeguarding Alert" col="2">
+                    <separator/>
+
+                    <!-- Safeguarding flag -->
+                    <group string="Safeguarding Alert" col="2">
                         <field name="x_safeguarding_flag" widget="boolean_toggle"/>
                         <field name="x_safeguarding_status"
                                invisible="not x_safeguarding_flag"/>
@@ -37,13 +59,14 @@
                                invisible="not x_safeguarding_flag"/>
                         <field name="x_safeguarding_flag_raised_by"
                                invisible="not x_safeguarding_flag"/>
-                        <field name="x_safeguarding_flag_reason" colspan="2"
+                        <field name="x_safeguarding_flag_reason"
+                               colspan="2"
                                invisible="not x_safeguarding_flag"
                                required="x_safeguarding_flag"/>
                     </group>
 
-                    <group string="Cases" col="1"
-                           invisible="x_case_count == 0">
+                    <!-- Cases link -->
+                    <group col="1" invisible="x_case_count == 0">
                         <button name="action_view_cases"
                                 type="object"
                                 string="View All Cases"
