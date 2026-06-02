@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seq_wamacare_indicator" model="ir.sequence">
+        <field name="name">WamaCare Indicator</field>
+        <field name="code">wamacare.indicator</field>
+        <field name="prefix">IND-</field>
+        <field name="padding">3</field>
+    </record>
+</odoo>

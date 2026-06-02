@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_wamacare_impact_root"
+              name="Impact &amp; M&amp;E"
+              sequence="55"/>
+
+    <menuitem id="menu_kpi_dashboard"
+              name="KPI Dashboard"
+              parent="menu_wamacare_impact_root"
+              action="action_programme_kpi_dashboard"
+              sequence="10"/>
+
+    <menuitem id="menu_indicators"
+              name="Outcome Indicators"
+              parent="menu_wamacare_impact_root"
+              action="action_wamacare_indicator"
+              sequence="20"/>
+</odoo>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ── Add Impact tab + smart button to project form ─── -->
+    <record id="view_project_impact_form" model="ir.ui.view">
+        <field name="name">project.project.impact.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+
+            <!-- Smart button: indicators count -->
+            <div name="button_box" position="inside">
+                <button name="action_view_indicators"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-bar-chart">
+                    <field name="x_indicator_count" widget="statinfo" string="Indicators"/>
+                </button>
+            </div>
+
+            <!-- Impact tab -->
+            <notebook position="inside">
+                <page string="Impact &amp; M&amp;E" name="wamacare_impact">
+
+                    <!-- EXEC-005 Beneficiary Stats -->
+                    <group string="Beneficiary Reach" col="4">
+                        <field name="x_beneficiary_count" string="Served"/>
+                        <field name="x_target_beneficiaries" string="Target"/>
+                        <field name="x_beneficiary_reach_pct" string="Reach %"
+                               widget="percentage"/>
+                        <div/>
+                    </group>
+
+                    <!-- ME-006 Cost per Beneficiary -->
+                    <group string="Cost Efficiency" col="3">
+                        <field name="x_total_spend" string="Total Spend (₦)"
+                               widget="monetary"/>
+                        <field name="x_cost_per_beneficiary" string="Cost per Beneficiary (₦)"
+                               widget="monetary"/>
+                        <div class="text-muted" style="font-size:0.9em; padding-top:8px;">
+                            Computed from analytic account spend ÷ beneficiaries served
+                        </div>
+                    </group>
+
+                    <separator string="Outcome Indicators"/>
+
+                    <!-- ME-005 Indicator inline list -->
+                    <field name="x_indicator_ids" mode="list" nolabel="1">
+                        <tree editable="bottom"
+                              decoration-success="status == 'achieved'"
+                              decoration-warning="status == 'at_risk'"
+                              decoration-danger="status == 'off_track'"
+                              decoration-muted="status == 'not_started'">
+                            <field name="sequence" widget="handle"/>
+                            <field name="name" placeholder="Indicator name..."/>
+                            <field name="indicator_type"/>
+                            <field name="target_value" string="Target"/>
+                            <field name="current_value" string="Achieved"/>
+                            <field name="unit" placeholder="unit"/>
+                            <field name="progress_pct" string="%" widget="percentage"/>
+                            <field name="status" widget="badge"
+                                   decoration-success="status == 'achieved'"
+                                   decoration-warning="status == 'at_risk'"
+                                   decoration-danger="status == 'off_track'"/>
+                            <field name="frequency"/>
+                        </tree>
+                    </field>
+
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <!-- ── Programme KPI Dashboard — EXEC-004 ────────────── -->
+    <record id="view_project_kpi_list" model="ir.ui.view">
+        <field name="name">project.project.kpi.list</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <tree string="Programme KPI Dashboard"
+                  decoration-success="x_beneficiary_reach_pct >= 75"
+                  decoration-warning="x_beneficiary_reach_pct > 0 and x_beneficiary_reach_pct &lt; 75"
+                  decoration-muted="x_beneficiary_count == 0">
+                <field name="name" string="Programme"/>
+                <field name="x_beneficiary_count" string="Served"/>
+                <field name="x_target_beneficiaries" string="Target"/>
+                <field name="x_beneficiary_reach_pct" string="Reach %" widget="percentage"/>
+                <field name="x_total_spend" string="Spend (₦)" widget="monetary"/>
+                <field name="x_cost_per_beneficiary" string="Cost/Ben (₦)" widget="monetary"/>
+                <field name="x_indicator_count" string="Indicators"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_programme_kpi_dashboard" model="ir.actions.act_window">
+        <field name="name">Programme KPI Dashboard</field>
+        <field name="res_model">project.project</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('view_project_kpi_list')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No programmes yet.</p>
+        </field>
+    </record>
+</odoo>

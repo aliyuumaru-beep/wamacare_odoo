@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ── Indicator Form ─────────────────────────────────── -->
+    <record id="view_wamacare_indicator_form" model="ir.ui.view">
+        <field name="name">wamacare.indicator.form</field>
+        <field name="model">wamacare.indicator</field>
+        <field name="arch" type="xml">
+            <form string="Outcome Indicator">
+                <header>
+                    <field name="status" widget="statusbar"
+                           statusbar_visible="not_started,on_track,at_risk,off_track,achieved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Indicator name..."/></h1>
+                    </div>
+                    <group col="2">
+                        <field name="programme_id"/>
+                        <field name="indicator_type"/>
+                        <field name="unit" placeholder="e.g. beneficiaries, visits, %"/>
+                        <field name="frequency"/>
+                        <field name="responsible_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+
+                    <group string="Progress" col="4">
+                        <field name="baseline"/>
+                        <field name="target_value"/>
+                        <field name="current_value"/>
+                        <field name="progress_pct" widget="percentage"/>
+                    </group>
+
+                    <group string="Notes / Evidence">
+                        <field name="notes" nolabel="1"
+                               placeholder="Record field observations, data sources, verification notes..."/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- ── Indicator List ────────────────────────────────── -->
+    <record id="view_wamacare_indicator_list" model="ir.ui.view">
+        <field name="name">wamacare.indicator.list</field>
+        <field name="model">wamacare.indicator</field>
+        <field name="arch" type="xml">
+            <tree string="Outcome Indicators"
+                  decoration-success="status == 'achieved'"
+                  decoration-warning="status == 'at_risk'"
+                  decoration-danger="status == 'off_track'"
+                  decoration-muted="status == 'not_started'">
+                <field name="programme_id"/>
+                <field name="name"/>
+                <field name="indicator_type"/>
+                <field name="target_value" string="Target"/>
+                <field name="current_value" string="Achieved"/>
+                <field name="unit"/>
+                <field name="progress_pct" string="%" widget="percentage"/>
+                <field name="status" widget="badge"
+                       decoration-success="status == 'achieved'"
+                       decoration-warning="status == 'at_risk'"
+                       decoration-danger="status == 'off_track'"/>
+                <field name="frequency"/>
+                <field name="responsible_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ── Indicator Search ───────────────────────────────── -->
+    <record id="view_wamacare_indicator_search" model="ir.ui.view">
+        <field name="name">wamacare.indicator.search</field>
+        <field name="model">wamacare.indicator</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="programme_id"/>
+                <filter string="On Track"   name="on_track"   domain="[('status','=','on_track')]"/>
+                <filter string="At Risk"    name="at_risk"    domain="[('status','=','at_risk')]"/>
+                <filter string="Off Track"  name="off_track"  domain="[('status','=','off_track')]"/>
+                <filter string="Achieved"   name="achieved"   domain="[('status','=','achieved')]"/>
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Programme" name="by_prog" context="{'group_by':'programme_id'}"/>
+                    <filter string="Status"    name="by_status" context="{'group_by':'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ── Action ─────────────────────────────────────────── -->
+    <record id="action_wamacare_indicator" model="ir.actions.act_window">
+        <field name="name">Outcome Indicators</field>
+        <field name="res_model">wamacare.indicator</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_wamacare_indicator_search"/>
+        <field name="context">{'search_default_by_prog': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No indicators yet.</p>
+            <p>Define outcome indicators per programme — what you plan to achieve and how to measure it.</p>
+        </field>
+    </record>
+</odoo>
