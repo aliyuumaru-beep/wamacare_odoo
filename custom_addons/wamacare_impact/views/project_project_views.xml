@@ -70,31 +70,29 @@
         </field>
     </record>
 
-    <!-- ── Programme KPI Dashboard — EXEC-004 ────────────── -->
+    <!-- ── KPI Dashboard: inherit the standard project list, add KPI cols ── -->
     <record id="view_project_kpi_list" model="ir.ui.view">
         <field name="name">project.project.kpi.list</field>
         <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
         <field name="arch" type="xml">
-            <tree string="Programme KPI Dashboard"
-                  decoration-success="x_beneficiary_reach_pct >= 75"
-                  decoration-warning="x_beneficiary_reach_pct > 0 and x_beneficiary_reach_pct &lt; 75"
-                  decoration-muted="x_beneficiary_count == 0">
-                <field name="name" string="Programme"/>
-                <field name="x_beneficiary_count" string="Served"/>
-                <field name="x_target_beneficiaries" string="Target"/>
-                <field name="x_beneficiary_reach_pct" string="Reach %" widget="percentage"/>
-                <field name="x_total_spend" string="Spend (₦)" widget="monetary"/>
-                <field name="x_cost_per_beneficiary" string="Cost/Ben (₦)" widget="monetary"/>
-                <field name="x_indicator_count" string="Indicators"/>
-            </tree>
+            <!-- Append KPI columns before the View Tasks button -->
+            <button name="action_view_tasks" position="before">
+                <field name="x_beneficiary_count" string="Served" optional="show"/>
+                <field name="x_target_beneficiaries" string="Target" optional="show"/>
+                <field name="x_beneficiary_reach_pct" string="Reach %" widget="percentage" optional="show"/>
+                <field name="x_total_spend" string="Spend (₦)" widget="monetary" optional="show"/>
+                <field name="x_cost_per_beneficiary" string="Cost/Ben (₦)" widget="monetary" optional="show"/>
+                <field name="x_indicator_count" string="Indicators" optional="show"/>
+            </button>
         </field>
     </record>
 
+    <!-- ── KPI Dashboard action — uses standard project list with extra cols ── -->
     <record id="action_programme_kpi_dashboard" model="ir.actions.act_window">
         <field name="name">Programme KPI Dashboard</field>
         <field name="res_model">project.project</field>
-        <field name="view_mode">list,form</field>
-        <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('view_project_kpi_list')})]"/>
+        <field name="view_mode">list,kanban,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No programmes yet.</p>
         </field>
