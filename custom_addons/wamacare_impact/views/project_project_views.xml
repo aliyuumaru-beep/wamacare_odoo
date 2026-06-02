@@ -21,7 +21,6 @@
             <notebook position="inside">
                 <page string="Impact &amp; M&amp;E" name="wamacare_impact">
 
-                    <!-- EXEC-005 Beneficiary Stats -->
                     <group string="Beneficiary Reach" col="4">
                         <field name="x_beneficiary_count" string="Served"/>
                         <field name="x_target_beneficiaries" string="Target"/>
@@ -30,7 +29,6 @@
                         <div/>
                     </group>
 
-                    <!-- ME-006 Cost per Beneficiary -->
                     <group string="Cost Efficiency" col="3">
                         <field name="x_total_spend" string="Total Spend (₦)"
                                widget="monetary"/>
@@ -43,7 +41,6 @@
 
                     <separator string="Outcome Indicators"/>
 
-                    <!-- ME-005 Indicator inline list -->
                     <field name="x_indicator_ids" mode="list" nolabel="1">
                         <tree editable="bottom"
                               decoration-success="status == 'achieved'"
@@ -70,31 +67,14 @@
         </field>
     </record>
 
-    <!-- ── KPI Dashboard: inherit the standard project list, add KPI cols ── -->
-    <record id="view_project_kpi_list" model="ir.ui.view">
-        <field name="name">project.project.kpi.list</field>
-        <field name="model">project.project</field>
-        <field name="inherit_id" ref="project.view_project"/>
-        <field name="arch" type="xml">
-            <!-- Append KPI columns before the View Tasks button -->
-            <button name="action_view_tasks" position="before">
-                <field name="x_beneficiary_count" string="Served" optional="show"/>
-                <field name="x_target_beneficiaries" string="Target" optional="show"/>
-                <field name="x_beneficiary_reach_pct" string="Reach %" widget="percentage" optional="show"/>
-                <field name="x_total_spend" string="Spend (₦)" widget="monetary" optional="show"/>
-                <field name="x_cost_per_beneficiary" string="Cost/Ben (₦)" widget="monetary" optional="show"/>
-                <field name="x_indicator_count" string="Indicators" optional="show"/>
-            </button>
-        </field>
-    </record>
-
-    <!-- ── KPI Dashboard action — uses standard project list with extra cols ── -->
+    <!-- ── KPI Dashboard action — standard project list, no overrides ── -->
     <record id="action_programme_kpi_dashboard" model="ir.actions.act_window">
-        <field name="name">Programme KPI Dashboard</field>
+        <field name="name">Programmes</field>
         <field name="res_model">project.project</field>
         <field name="view_mode">list,kanban,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No programmes yet.</p>
+            <p>Click a programme to open it and see its Impact &amp; M&amp;E tab with indicators and cost-per-beneficiary.</p>
         </field>
     </record>
 </odoo>
