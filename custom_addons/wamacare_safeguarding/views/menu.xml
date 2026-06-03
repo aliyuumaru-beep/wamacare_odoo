@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Top-level menu under Contacts -->
-    <menuitem id="menu_wamacare_root"
-              name="Safeguarding"
-              web_icon="wamacare_safeguarding,static/description/icon.png"
-              sequence="50"/>
-
-    <menuitem id="menu_wamacare_cases"
-              name="Cases"
-              parent="menu_wamacare_root"
-              action="action_wamacare_case"
-              sequence="10"/>
-
-    <menuitem id="menu_wamacare_beneficiaries"
-              name="Beneficiaries"
-              parent="menu_wamacare_root"
-              action="contacts.action_contacts"
-              sequence="20"/>
+    <!--
+        Safeguarding data lives inside the Contact form as a tab.
+        Open a beneficiary contact → Consent & Safeguarding tab.
+        Cases are accessed via the shield smart button on each contact.
+        No separate top-level app needed.
+    -->
 </odoo>
