@@ -41,7 +41,7 @@
 
                     <separator string="Outcome Indicators"/>
 
-                    <field name="x_indicator_ids" mode="list" nolabel="1">
+                    <field name="x_indicator_ids" mode="tree" nolabel="1">
                         <tree editable="bottom"
                               decoration-success="status == 'achieved'"
                               decoration-warning="status == 'at_risk'"

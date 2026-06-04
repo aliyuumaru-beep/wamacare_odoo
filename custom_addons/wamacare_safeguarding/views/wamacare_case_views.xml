@@ -52,7 +52,7 @@
                         </page>
 
                         <page string="Case Notes">
-                            <field name="note_ids" mode="list">
+                            <field name="note_ids" mode="tree">
                                 <tree editable="bottom"
                                       decoration-warning="note_type == 'escalation'"
                                       decoration-danger="note_type == 'referral'">
