@@ -157,14 +157,19 @@ class WamaCase(models.Model):
         self.write({'state': 'open', 'date_closed': False})
 
     def action_add_note(self):
-        """Open a dialog to add a case note."""
+        """Open a dialog to add a case note with evidence file upload."""
+        self.ensure_one()
         return {
             'type':      'ir.actions.act_window',
-            'name':      'Add Case Note',
+            'name':      'Add Note / Upload Evidence',
             'res_model': 'wamacare.case.note',
             'view_mode': 'form',
+            'view_id':   self.env.ref('wamacare_safeguarding.view_wamacare_case_note_form').id,
             'target':    'new',
-            'context':   {'default_case_id': self.id},
+            'context':   {
+                'default_case_id':   self.id,
+                'default_note_type': 'evidence',
+            },
         }
 
 

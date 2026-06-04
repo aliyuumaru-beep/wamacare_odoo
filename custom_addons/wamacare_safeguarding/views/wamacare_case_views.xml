@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- ── Case Form View ──────────────────────────────────── -->
+    <!-- ── Case Note Form View (dialog) ──────────────────────────
+         Opens when user clicks "Add Note" or clicks a note row.
+         Full file upload via many2many_binary widget.           -->
+    <record id="view_wamacare_case_note_form" model="ir.ui.view">
+        <field name="name">wamacare.case.note.form</field>
+        <field name="model">wamacare.case.note</field>
+        <field name="arch" type="xml">
+            <form string="Case Note">
+                <sheet>
+                    <group col="2">
+                        <field name="note_type"/>
+                        <field name="date" readonly="1"/>
+                        <field name="author_id" readonly="1"/>
+                        <field name="case_id" readonly="1"/>
+                    </group>
+
+                    <group string="Note">
+                        <field name="note" nolabel="1"
+                               placeholder="Enter your note here..."/>
+                    </group>
+
+                    <group string="Evidence Attachments"
+                           help="Attach documents, photos, or reports as evidence. Only visible to authorised users.">
+                        <field name="attachment_ids"
+                               widget="many2many_binary"
+                               nolabel="1"
+                               string="Files"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ── Case Form View ────────────────────────────────────── -->
     <record id="view_wamacare_case_form" model="ir.ui.view">
         <field name="name">wamacare.case.form</field>
         <field name="model">wamacare.case</field>
@@ -25,6 +58,7 @@
 
                 <sheet>
                     <div class="oe_button_box" name="button_box">
+                        <!-- Notes count — click to add a new note -->
                         <button name="action_add_note" type="object"
                                 class="oe_stat_button" icon="fa-sticky-note">
                             <field name="note_count" widget="statinfo" string="Notes"/>
@@ -51,23 +85,29 @@
                                    placeholder="Describe the concern factually and objectively..."/>
                         </page>
 
+                        <!-- Case Notes — each row opens the note form for evidence upload -->
                         <page string="Case Notes">
-                            <field name="note_ids" mode="tree">
-                                <tree editable="bottom"
-                                      decoration-warning="note_type == 'escalation'"
-                                      decoration-danger="note_type == 'referral'">
-                                    <field name="date" readonly="1"/>
-                                    <field name="author_id" readonly="1"/>
-                                    <field name="note_type"/>
-                                    <field name="note"/>
-                                    <field name="attachment_ids" widget="many2many_tags"/>
+                            <button name="action_add_note" type="object"
+                                    string="+ Add Note / Upload Evidence"
+                                    class="btn-primary mb-2"/>
+                            <field name="note_ids" mode="tree" nolabel="1">
+                                <tree decoration-warning="note_type == 'escalation'"
+                                      decoration-danger="note_type == 'referral'"
+                                      decoration-info="note_type == 'evidence'"
+                                      open_form_view="True">
+                                    <field name="date" readonly="1" string="When"/>
+                                    <field name="author_id" readonly="1" string="By"/>
+                                    <field name="note_type" string="Type"/>
+                                    <field name="note" string="Note"/>
+                                    <field name="attachment_ids" widget="many2many_binary"
+                                           string="Files"/>
                                 </tree>
                             </field>
                         </page>
 
-                        <page string="Evidence">
+                        <page string="Evidence Summary">
                             <field name="evidence_description"
-                                   placeholder="Describe evidence: documents, photos, witness statements..."/>
+                                   placeholder="Summarise all evidence collected for this case: documents, photos, witness statements, dates..."/>
                         </page>
 
                         <page string="Referral"
